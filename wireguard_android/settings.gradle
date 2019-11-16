@@ -1,0 +1,9 @@
+include ':app'
+rootProject.name = 'wireguard_android'
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File('d:/development/projects/android/flutter_wireguard_test/wireguard_flutter/.android/include_flutter.groovy'
+))
+
+include ':wireguard_flutter'
+project(':wireguard_flutter').projectDir = new File('D:/development/projects/android/flutter_wireguard_test/wireguard_flutter')
