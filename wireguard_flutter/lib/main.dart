@@ -82,6 +82,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void test1() {
+    // com.qyh.jump/plugin是原生代码中定义好的，要对应起来
+    const jumpPlugin = const MethodChannel('com.qyh.jump/plugin');
+    jumpPlugin.invokeMethod('test1', "2222");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _getBatteryLevel,
+        onPressed: test1,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
