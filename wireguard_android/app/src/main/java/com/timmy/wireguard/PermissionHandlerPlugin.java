@@ -221,13 +221,19 @@ public class PermissionHandlerPlugin implements MethodChannel.MethodCallHandler 
                 break;
             }
             case "requestPermissions":
+                //   if (mResult != null) {
+                // Fix for request permissions not returning results as it's handled by embedding native activity
+                // It's handled by native additional method now
+
+        /*
                 if (mResult != null) {
                     result.error(
                             "ERROR_ALREADY_REQUESTING_PERMISSIONS",
                             "A request for permissions is already running, please wait for it to finish before doing another request (note that you can request multiple permissions at the same time).",
                             null);
                     return;
-                }
+
+                } */
 
                 mResult = result;
                 final List<Integer> permissions = call.arguments();

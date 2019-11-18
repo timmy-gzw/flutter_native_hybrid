@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
         addFlutter()
     }
 
-
-
     private fun addFlutter() {
         val flutterView = Flutter.createView(this, lifecycle, "route1")
         val layout = ConstraintLayout.LayoutParams(

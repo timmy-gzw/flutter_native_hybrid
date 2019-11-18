@@ -17,11 +17,16 @@ public class FlutterPluginJumpToAct implements MethodChannel.MethodCallHandler {
         this.activity = activity;
     }
 
-    // 此方法需要外界进行调用注册
+    /**
+     * 此方法需要外界进行调用注册
+     *
+     * @param registrar
+     */
     public static void registerWith(PluginRegistry.Registrar registrar) {
+
         channel = new MethodChannel(registrar.messenger(), CHANNEL);
         FlutterPluginJumpToAct instance = new FlutterPluginJumpToAct(registrar.activity());
-        //setMethodCallHandler在此通道上接收方法调用的回调
+        // setMethodCallHandler在此通道上接收方法调用的回调
         channel.setMethodCallHandler(instance);
     }
 
